@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Krushan Meditech Pvt. Ltd. — Advanced Healthcare Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a1628;
+    --navy-mid: #112240;
+    --navy-light: #1d3461;
+    --teal: #0d9e7a;
+    --teal-light: #1dcfaa;
+    --teal-faint: rgba(13,158,122,0.10);
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --cream: #f7f3ee;
+    --cream-mid: #ede7dc;
+    --white: #ffffff;
+    --text-primary: #0a1628;
+    --text-secondary: #3a4f6e;
+    --text-muted: #7a90aa;
+    --border: rgba(10,22,40,0.10);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text-primary);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ---------- NAV ---------- */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 5vw;
+    background: rgba(10,22,40,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+    transition: background 0.3s;
+  }
+  .logo {
+    display: flex; align-items: center; gap: 0.75rem; text-decoration: none;
+  }
+  .logo-mark {
+    width: 40px; height: 40px;
+    background: linear-gradient(135deg, var(--teal) 0%, var(--teal-light) 100%);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600; font-size: 1.2rem; color: #fff;
+    letter-spacing: -0.03em;
+    flex-shrink: 0;
+  }
+  .logo-text { display: flex; flex-direction: column; gap: 1px; }
+  .logo-name {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem; font-weight: 500; color: var(--white);
+    letter-spacing: 0.04em;
+  }
+  .logo-sub {
+    font-size: 0.65rem; font-weight: 300; color: var(--gold);
+    letter-spacing: 0.14em; text-transform: uppercase;
+  }
+  .nav-links {
+    display: flex; gap: 2rem; list-style: none;
+  }
+  .nav-links a {
+    color: rgba(255,255,255,0.7); text-decoration: none;
+    font-size: 0.875rem; font-weight: 400; letter-spacing: 0.03em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--teal-light); }
+  .nav-cta {
+    padding: 0.55rem 1.4rem;
+    background: transparent;
+    border: 1px solid var(--teal);
+    color: var(--teal-light) !important;
+    border-radius: 6px;
+    font-size: 0.85rem !important;
+    transition: background 0.2s, color 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--teal) !important; color: #fff !important; }
+
+  /* ---------- HERO ---------- */
+  #hero {
+    min-height: 100vh;
+    background: var(--navy);
+    position: relative; overflow: hidden;
+    display: flex; align-items: center;
+  }
+  .hero-bg {
+    position: absolute; inset: 0; pointer-events: none;
+  }
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(13,158,122,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(13,158,122,0.06) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 70% 80% at 60% 50%, black 0%, transparent 70%);
+  }
+  .hero-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    animation: pulse 6s ease-in-out infinite;
+  }
+  .orb-1 {
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(13,158,122,0.18) 0%, transparent 70%);
+    top: -100px; right: -100px;
+  }
+  .orb-2 {
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(201,168,76,0.10) 0%, transparent 70%);
+    bottom: -50px; left: 10%;
+    animation-delay: -3s;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.08); }
+  }
+
+  .hero-content {
+    position: relative; z-index: 2;
+    padding: 0 5vw; max-width: 1200px; width: 100%;
+    margin: 0 auto; padding-top: 100px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+  }
+  .hero-label {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gold); font-weight: 500; margin-bottom: 1.5rem;
+  }
+  .hero-label::before {
+    content: ''; display: block; width: 28px; height: 1px; background: var(--gold);
+  }
+  .hero-h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    font-weight: 300; line-height: 1.15;
+    color: var(--white); letter-spacing: -0.01em;
+    margin-bottom: 1.5rem;
+  }
+  .hero-h1 em {
+    font-style: italic; color: var(--teal-light);
+  }
+  .hero-desc {
+    font-size: 1rem; line-height: 1.75; color: rgba(255,255,255,0.55);
+    font-weight: 300; max-width: 420px; margin-bottom: 2.5rem;
+  }
+  .hero-btns { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+  .btn-primary {
+    padding: 0.85rem 2rem;
+    background: var(--teal);
+    color: #fff; border: none; border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem; font-weight: 500;
+    cursor: pointer; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .btn-primary:hover { background: var(--teal-light); transform: translateY(-2px); }
+  .btn-ghost {
+    padding: 0.85rem 2rem;
+    background: transparent;
+    color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem; font-weight: 400;
+    cursor: pointer; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-ghost:hover { border-color: rgba(255,255,255,0.4); color: #fff; }
+
+  .hero-stats {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem; margin-top: 3.5rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem; font-weight: 300; color: var(--teal-light); line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+  .stat-label {
+    font-size: 0.75rem; color: rgba(255,255,255,0.4);
+    letter-spacing: 0.06em; text-transform: uppercase; font-weight: 400;
+  }
+
+  /* Hero visual */
+  .hero-visual {
+    position: relative; display: flex; justify-content: center; align-items: center;
+  }
+  .hero-card-stack {
+    position: relative; width: 340px; height: 420px;
+  }
+  .h-card {
+    position: absolute; border-radius: 16px;
+    background: var(--navy-mid);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 1.5rem;
+    backdrop-filter: blur(8px);
+    transition: transform 0.4s;
+  }
+  .h-card-back {
+    width: 300px; height: 370px;
+    top: 40px; right: -20px;
+    background: rgba(29,52,97,0.5);
+    transform: rotate(5deg);
+  }
+  .h-card-mid {
+    width: 320px; height: 380px;
+    top: 20px; right: 0;
+    background: rgba(17,34,64,0.7);
+    transform: rotate(2deg);
+  }
+  .h-card-front {
+    width: 340px; height: 380px;
+    top: 0; left: 0;
+    background: var(--navy-mid);
+    border-color: rgba(13,158,122,0.25);
+  }
+  .card-icon {
+    width: 48px; height: 48px; border-radius: 12px;
+    background: var(--teal-faint);
+    border: 1px solid rgba(13,158,122,0.3);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1rem;
+  }
+  .card-icon svg { width: 24px; height: 24px; color: var(--teal-light); }
+  .card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem; font-weight: 400; color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+  .card-desc {
+    font-size: 0.8rem; color: rgba(255,255,255,0.4);
+    line-height: 1.6; margin-bottom: 1.25rem;
+  }
+  .card-bar-row {
+    display: flex; flex-direction: column; gap: 0.7rem;
+  }
+  .bar-item { display: flex; flex-direction: column; gap: 0.3rem; }
+  .bar-label {
+    display: flex; justify-content: space-between;
+    font-size: 0.72rem; color: rgba(255,255,255,0.4);
+  }
+  .bar-track {
+    height: 3px; background: rgba(255,255,255,0.07); border-radius: 2px; overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%; border-radius: 2px;
+    background: linear-gradient(90deg, var(--teal) 0%, var(--teal-light) 100%);
+    animation: grow 1.5s ease-out both;
+  }
+  @keyframes grow { from { width: 0; } }
+  .card-badge {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    background: rgba(13,158,122,0.12); border: 1px solid rgba(13,158,122,0.25);
+    color: var(--teal-light); font-size: 0.7rem; padding: 0.3rem 0.7rem;
+    border-radius: 20px; margin-top: 1.25rem;
+  }
+  .pulse-dot {
+    width: 6px; height: 6px; border-radius: 50%; background: var(--teal-light);
+    animation: blink 1.5s ease-in-out infinite;
+  }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+  /* ---------- SECTION BASE ---------- */
+  section { padding: 7rem 5vw; }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--teal); font-weight: 500; margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .section-label::before {
+    content: ''; display: block; width: 20px; height: 1px; background: var(--teal);
+  }
+  .section-h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300; line-height: 1.2; color: var(--navy);
+    margin-bottom: 1rem; letter-spacing: -0.02em;
+  }
+  .section-h2 em { font-style: italic; color: var(--teal); }
+  .section-desc {
+    font-size: 1rem; line-height: 1.75; color: var(--text-secondary);
+    font-weight: 300; max-width: 520px;
+  }
+
+  /* ---------- ABOUT ---------- */
+  #about { background: var(--cream); }
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; align-items: center;
+  }
+  .about-visual {
+    position: relative;
+  }
+  .about-img-mock {
+    width: 100%; aspect-ratio: 4/5; border-radius: 20px;
+    background: var(--navy-mid);
+    overflow: hidden; position: relative;
+  }
+  .about-img-inner {
+    position: absolute; inset: 0;
+    background: linear-gradient(160deg, var(--navy-light) 0%, var(--navy) 100%);
+    display: flex; align-items: center; justify-content: center;
+  }
+  /* DNA helix SVG anim */
+  .helix-svg { width: 180px; opacity: 0.4; }
+  .about-badge {
+    position: absolute; bottom: -1.5rem; right: -1.5rem;
+    background: var(--white); border-radius: 16px; padding: 1.25rem 1.5rem;
+    box-shadow: 0 20px 60px rgba(10,22,40,0.15);
+    border: 1px solid var(--border);
+  }
+  .ab-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; font-weight: 300; color: var(--navy);
+  }
+  .ab-label { font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.06em; }
+  .about-pillars { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2.5rem; }
+  .pillar {
+    display: flex; gap: 1rem; align-items: flex-start;
+    padding: 1.25rem; border-radius: 12px;
+    background: var(--white); border: 1px solid var(--border);
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .pillar:hover { border-color: var(--teal); box-shadow: 0 8px 30px rgba(13,158,122,0.08); }
+  .pillar-icon {
+    width: 44px; height: 44px; border-radius: 10px; flex-shrink: 0;
+    background: var(--teal-faint); border: 1px solid rgba(13,158,122,0.2);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .pillar-icon svg { width: 20px; height: 20px; color: var(--teal); }
+  .pillar-title { font-size: 0.95rem; font-weight: 500; color: var(--navy); margin-bottom: 0.2rem; }
+  .pillar-text { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; }
+
+  /* ---------- PORTFOLIO ---------- */
+  #portfolio { background: var(--white); }
+  .portfolio-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 3.5rem; flex-wrap: wrap; gap: 1.5rem;
+  }
+  .portfolio-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+  }
+  .port-card {
+    border-radius: 16px; overflow: hidden;
+    border: 1px solid var(--border);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: default;
+  }
+  .port-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(10,22,40,0.12); }
+  .port-card-top {
+    height: 180px; position: relative; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .pc-navy { background: var(--navy); }
+  .pc-teal { background: linear-gradient(135deg, #0d4a3a 0%, #0d9e7a 100%); }
+  .pc-gold { background: linear-gradient(135deg, #3d2a00 0%, #8a6010 100%); }
+  .pc-blue { background: linear-gradient(135deg, #0a1640 0%, #1a3a7a 100%); }
+  .pc-deep { background: linear-gradient(135deg, #1a0a30 0%, #3a1a6a 100%); }
+  .pc-slate { background: linear-gradient(135deg, #0f1f30 0%, #1e3f5a 100%); }
+  .port-icon-large {
+    width: 64px; height: 64px; opacity: 0.7;
+  }
+  .port-icon-large svg { width: 64px; height: 64px; color: rgba(255,255,255,0.6); }
+  .port-card-body { padding: 1.25rem; }
+  .port-tag {
+    font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--teal); font-weight: 500; margin-bottom: 0.5rem;
+  }
+  .port-title { font-size: 1rem; font-weight: 500; color: var(--navy); margin-bottom: 0.4rem; }
+  .port-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.6; }
+  .port-card-footer {
+    padding: 0.85rem 1.25rem;
+    border-top: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .port-states { font-size: 0.72rem; color: var(--text-muted); }
+  .port-arrow {
+    width: 28px; height: 28px; border-radius: 50%;
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .port-card:hover .port-arrow { background: var(--teal); border-color: var(--teal); }
+  .port-card:hover .port-arrow svg { color: #fff; }
+  .port-arrow svg { width: 13px; height: 13px; color: var(--text-muted); transition: color 0.2s; }
+
+  /* ---------- GEOGRAPHY ---------- */
+  #geography { background: var(--navy); }
+  #geography .section-h2 { color: var(--white); }
+  #geography .section-desc { color: rgba(255,255,255,0.5); }
+  #geography .section-label { color: var(--teal-light); }
+  #geography .section-label::before { background: var(--teal-light); }
+  .geo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-top: 4rem; }
+  .geo-states { display: flex; flex-direction: column; gap: 1rem; }
+  .state-row {
+    display: flex; align-items: center; gap: 1rem;
+    padding: 1.25rem; border-radius: 12px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    transition: border-color 0.2s, background 0.2s;
+    cursor: default;
+  }
+  .state-row:hover { border-color: rgba(13,158,122,0.4); background: rgba(13,158,122,0.06); }
+  .state-indicator { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .si-primary { background: var(--teal-light); box-shadow: 0 0 12px var(--teal); }
+  .si-secondary { background: var(--gold); box-shadow: 0 0 12px var(--gold); }
+  .state-name { font-size: 0.9rem; font-weight: 500; color: var(--white); flex: 1; }
+  .state-focus { font-size: 0.75rem; color: rgba(255,255,255,0.4); }
+  .state-count {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem; font-weight: 300; color: var(--teal-light);
+  }
+  /* Map SVG */
+  .geo-map {
+    position: relative; display: flex; align-items: center; justify-content: center;
+  }
+
+  /* ---------- SCHEMES ---------- */
+  #schemes { background: var(--cream); }
+  .schemes-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 3rem; }
+  .scheme-card {
+    padding: 1.5rem; border-radius: 14px;
+    background: var(--white); border: 1px solid var(--border);
+    text-align: center;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+  .scheme-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(10,22,40,0.1); }
+  .scheme-emoji {
+    width: 52px; height: 52px; border-radius: 14px;
+    background: var(--teal-faint); border: 1px solid rgba(13,158,122,0.2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; margin: 0 auto 1rem;
+  }
+  .scheme-name { font-size: 0.85rem; font-weight: 500; color: var(--navy); margin-bottom: 0.3rem; }
+  .scheme-full { font-size: 0.7rem; color: var(--text-muted); line-height: 1.4; }
+
+  /* ---------- CONTACT ---------- */
+  #contact { background: var(--navy); position: relative; overflow: hidden; }
+  #contact::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--teal) 50%, transparent 100%);
+  }
+  #contact .section-h2 { color: var(--white); }
+  #contact .section-desc { color: rgba(255,255,255,0.5); }
+  #contact .section-label { color: var(--teal-light); }
+  #contact .section-label::before { background: var(--teal-light); }
+  .contact-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; margin-top: 3rem;
+  }
+  .contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
+  .contact-item {
+    display: flex; gap: 1rem; align-items: flex-start;
+    padding: 1rem; border-radius: 12px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+  }
+  .contact-icon {
+    width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;
+    background: var(--teal-faint); border: 1px solid rgba(13,158,122,0.2);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .contact-icon svg { width: 18px; height: 18px; color: var(--teal-light); }
+  .contact-item-label { font-size: 0.7rem; color: rgba(255,255,255,0.35); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.25rem; }
+  .contact-item-val { font-size: 0.9rem; color: rgba(255,255,255,0.8); line-height: 1.5; }
+  .contact-form {
+    background: rgba(255,255,255,0.04); border-radius: 20px;
+    padding: 2rem; border: 1px solid rgba(255,255,255,0.07);
+  }
+  .form-group { margin-bottom: 1rem; }
+  .form-label { display: block; font-size: 0.75rem; color: rgba(255,255,255,0.4); margin-bottom: 0.4rem; letter-spacing: 0.06em; }
+  .form-input {
+    width: 100%; padding: 0.75rem 1rem;
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px; color: var(--white);
+    font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+    outline: none; transition: border-color 0.2s;
+  }
+  .form-input:focus { border-color: var(--teal); }
+  .form-input::placeholder { color: rgba(255,255,255,0.25); }
+  textarea.form-input { resize: vertical; min-height: 100px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-submit {
+    width: 100%; padding: 0.9rem;
+    background: var(--teal); border: none; border-radius: 8px;
+    color: #fff; font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem; font-weight: 500; cursor: pointer;
+    transition: background 0.2s; margin-top: 0.5rem;
+    display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+  }
+  .form-submit:hover { background: var(--teal-light); }
+  .submit-msg {
+    text-align: center; padding: 0.6rem;
+    font-size: 0.8rem; color: var(--teal-light);
+    display: none;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    background: #050d1a;
+    padding: 2.5rem 5vw;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+  .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.25); }
+  .footer-gstin { font-size: 0.72rem; color: rgba(255,255,255,0.15); letter-spacing: 0.06em; }
+  .footer-links { display: flex; gap: 1.5rem; }
+  .footer-links a { font-size: 0.78rem; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--teal-light); }
+
+  /* ---------- SCROLL REVEAL ---------- */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ---------- HAMBURGER MOBILE ---------- */
+  .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+  .hamburger span { display: block; width: 22px; height: 1.5px; background: rgba(255,255,255,0.7); margin: 5px 0; transition: all 0.3s; }
+
+  @media (max-width: 900px) {
+    .hero-content { grid-template-columns: 1fr; padding-top: 120px; }
+    .hero-visual { display: none; }
+    .about-grid { grid-template-columns: 1fr; }
+    .about-visual { display: none; }
+    .portfolio-grid { grid-template-columns: 1fr 1fr; }
+    .geo-grid { grid-template-columns: 1fr; }
+    .schemes-grid { grid-template-columns: 1fr 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .hamburger { display: block; }
+  }
+  @media (max-width: 600px) {
+    .portfolio-grid { grid-template-columns: 1fr; }
+    .schemes-grid { grid-template-columns: 1fr 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .hero-stats { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ======== NAV ======== -->
+<nav id="navbar">
+  <a href="#" class="logo">
+    <div class="logo-mark">K</div>
+    <div class="logo-text">
+      <span class="logo-name">Krushan Meditech</span>
+      <span class="logo-sub">Private Limited</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#portfolio">Solutions</a></li>
+    <li><a href="#geography">Presence</a></li>
+    <li><a href="#schemes">Schemes</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+  <button class="hamburger" aria-label="Menu" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ======== HERO ======== -->
+<section id="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="hero-orb orb-1"></div>
+    <div class="hero-orb orb-2"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-label">Advancing Healthcare in India</div>
+      <h1 class="hero-h1">
+        Where Precision <em>Technology</em><br>Meets Clinical <em>Purpose</em>
+      </h1>
+      <p class="hero-desc">
+        Krushan Meditech delivers cutting-edge medical equipment, rehabilitation devices, oncology infrastructure, and point-of-care technologies to government and institutional healthcare across Maharashtra, Madhya Pradesh &amp; Chhattisgarh.
+      </p>
+      <div class="hero-btns">
+        <a href="#portfolio" class="btn-primary">
+          Explore Solutions
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contact" class="btn-ghost">Get in Touch</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num">3+</div>
+          <div class="stat-label">States Served</div>
+        </div>
+        <div>
+          <div class="stat-num">30+</div>
+          <div class="stat-label">Oncology Centers</div>
+        </div>
+        <div>
+          <div class="stat-num">6+</div>
+          <div class="stat-label">Product Verticals</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card-stack">
+        <div class="h-card h-card-back"></div>
+        <div class="h-card h-card-mid"></div>
+        <div class="h-card h-card-front">
+          <div class="card-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path d="M12 6v6m0 0v6m0-6h6m-6 0H6M3 3l18 18M3 21L21 3"/>
+            </svg>
+          </div>
+          <div class="card-title">Healthcare Impact</div>
+          <div class="card-desc">Deploying advanced diagnostics &amp; therapeutics across government &amp; institutional networks</div>
+          <div class="card-bar-row">
+            <div class="bar-item">
+              <div class="bar-label"><span>Medical Equipment</span><span>94%</span></div>
+              <div class="bar-track"><div class="bar-fill" style="width:94%;animation-delay:0.2s"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label"><span>Oncology Infrastructure</span><span>88%</span></div>
+              <div class="bar-track"><div class="bar-fill" style="width:88%;animation-delay:0.4s"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label"><span>Rehabilitation Devices</span><span>82%</span></div>
+              <div class="bar-track"><div class="bar-fill" style="width:82%;animation-delay:0.6s"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label"><span>Point-of-Care Tech</span><span>78%</span></div>
+              <div class="bar-track"><div class="bar-fill" style="width:78%;animation-delay:0.8s"></div></div>
+            </div>
+          </div>
+          <div class="card-badge">
+            <div class="pulse-dot"></div>
+            Active Government Projects
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== ABOUT ======== -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <div class="about-img-mock">
+          <div class="about-img-inner">
+            <svg class="helix-svg" viewBox="0 0 180 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="hg1" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#0d9e7a" stop-opacity="0.8"/>
+                  <stop offset="100%" stop-color="#1dcfaa" stop-opacity="0.3"/>
+                </linearGradient>
+              </defs>
+              <!-- Helix strand 1 -->
+              <path d="M90 10 C130 40 50 80 90 110 C130 140 50 180 90 210 C130 240 50 260 90 270"
+                stroke="url(#hg1)" stroke-width="2.5" fill="none"/>
+              <!-- Helix strand 2 -->
+              <path d="M90 10 C50 40 130 80 90 110 C50 140 130 180 90 210 C50 240 130 260 90 270"
+                stroke="rgba(201,168,76,0.6)" stroke-width="2.5" fill="none"/>
+              <!-- Rungs -->
+              <line x1="60" y1="55" x2="120" y2="55" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+              <line x1="55" y1="95" x2="125" y2="95" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+              <line x1="60" y1="140" x2="120" y2="140" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+              <line x1="55" y1="180" x2="125" y2="180" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+              <line x1="60" y1="225" x2="120" y2="225" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+              <!-- Dots -->
+              <circle cx="60" cy="55" r="4" fill="#0d9e7a"/>
+              <circle cx="120" cy="55" r="4" fill="#c9a84c"/>
+              <circle cx="55" cy="95" r="4" fill="#c9a84c"/>
+              <circle cx="125" cy="95" r="4" fill="#0d9e7a"/>
+              <circle cx="60" cy="140" r="4" fill="#0d9e7a"/>
+              <circle cx="120" cy="140" r="4" fill="#c9a84c"/>
+              <circle cx="55" cy="180" r="4" fill="#c9a84c"/>
+              <circle cx="125" cy="180" r="4" fill="#0d9e7a"/>
+              <circle cx="60" cy="225" r="4" fill="#0d9e7a"/>
+              <circle cx="120" cy="225" r="4" fill="#c9a84c"/>
+            </svg>
+          </div>
+        </div>
+        <div class="about-badge">
+          <div class="ab-num">2015</div>
+          <div class="ab-label">Est. Pune, Maharashtra</div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="section-label">About Us</div>
+        <h2 class="section-h2">A Trusted Partner in <em>Healthcare Infrastructure</em></h2>
+        <p class="section-desc" style="margin-bottom:2rem;">
+          Krushan Meditech Private Limited is a MedTech enterprise headquartered in Pune and Mumbai, operating within a group that includes Heureka Medihealth, Credknow Solutions, and Vimal Enterprises. We bridge the gap between advanced global technology and India's growing public healthcare system.
+        </p>
+        <div class="about-pillars">
+          <div class="pillar">
+            <div class="pillar-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="pillar-title">Government & Institutional Focus</div>
+              <div class="pillar-text">Deep expertise in PM-JAY, ESIS, CGMSCL, and state-level procurement with compliant documentation and empanelment support.</div>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="pillar-title">End-to-End Solutions</div>
+              <div class="pillar-text">From procurement and installation to commissioning, training, and ongoing service support across all supplied technologies.</div>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">
+              <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="pillar-title">Patient-First Impact</div>
+              <div class="pillar-text">Every deployment is designed to improve clinical outcomes, reduce costs for patients, and expand access to advanced care.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== PORTFOLIO ======== -->
+<section id="portfolio">
+  <div class="section-inner">
+    <div class="portfolio-header">
+      <div>
+        <div class="section-label">Our Portfolio</div>
+        <h2 class="section-h2">Comprehensive <em>MedTech</em> Solutions</h2>
+      </div>
+      <p class="section-desc" style="max-width:340px;text-align:right;">
+        Six integrated verticals covering the full continuum of healthcare technology delivery.
+      </p>
+    </div>
+    <div class="portfolio-grid">
+
+      <div class="port-card reveal">
+        <div class="port-card-top pc-navy">
+          <div class="port-icon-large">
+            <svg fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 64 64">
+              <rect x="12" y="8" width="40" height="48" rx="4" stroke-width="1.5"/>
+              <path d="M22 26h20M22 34h12M32 18v-4M32 18l-4 4M32 18l4 4"/>
+              <circle cx="44" cy="44" r="10" fill="rgba(13,158,122,0.2)" stroke-width="1.5"/>
+              <path d="M44 40v4l3 3" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+        <div class="port-card-body">
+          <div class="port-tag">Diagnostics</div>
+          <div class="port-title">Medical Equipment</div>
+          <div class="port-desc">Advanced diagnostic systems, imaging solutions, and laboratory equipment for hospitals and government health facilities.</div>
+        </div>
+        <div class="port-card-footer">
+          <span class="port-states">MH · MP · CG</span>
+          <div class="port-arrow">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="port-card reveal" style="transition-delay:0.1s">
+        <div class="port-card-top pc-teal">
+          <div class="port-icon-large">
+            <svg fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 64 64">
+              <path d="M32 12c-8 0-14 8-14 18s6 18 14 18 14-8 14-18S40 12 32 12z"/>
+              <path d="M18 30c-4 0-6 3-6 6s2 6 6 6M46 30c4 0 6 3 6 6s-2 6-6 6"/>
+              <path d="M24 48l-4 8M40 48l4 8M28 56h8"/>
+              <circle cx="26" cy="28" r="3" fill="rgba(255,255,255,0.4)"/>
+              <circle cx="38" cy="28" r="3" fill="rgba(255,255,255,0.4)"/>
+            </svg>
+          </div>
+        </div>
+        <div class="port-card-body">
+          <div class="port-tag">Rehabilitation</div>
+          <div class="port-title">Rehabilitation Devices</div>
+          <div class="port-desc">Robotic rehabilitation systems, prosthetics, orthotics, and assistive devices for ESIS, AYUSH, and NAM scheme beneficiaries.</div>
+        </div>
+        <div class="port-card-footer">
+          <span class="port-states">ESIS · NAM · AYUSH</span>
+          <div class="port-arrow">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="port-card reveal" style="transition-delay:0.2s">
+        <div class="port-card-top pc-gold">
+          <div class="port-icon-large">
+            <svg fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 64 64">
+              <path d="M32 8l4 12h12l-10 8 4 12-10-8-10 8 4-12L16 20h12z" fill="rgba(201,168,76,0.25)" stroke-width="1.5"/>
+              <circle cx="32" cy="38" r="14" stroke-width="1.5"/>
+              <path d="M26 38h12M32 32v12" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+        <div class="port-card-body">
+          <div class="port-tag">Oncology</div>
+          <div class="port-title">Oncology Infrastructure</div>
+          <div class="port-desc">DCCC network of 30+ cancer daycare centers across Maharashtra districts, operating on PM-JAY plus private revenue models.</div>
+        </div>
+        <div class="port-card-footer">
+          <span class="port-states">30+ Centers · MH Districts</span>
+          <div class="port-arrow">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="port-card reveal" style="transition-delay:0.3s">
+        <div class="port-card-top pc-blue">
+          <div class="port-icon-large">
+            <svg fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 64 64">
+              <rect x="10" y="20" width="20" height="28" rx="3" stroke-width="1.5"/>
+              <rect x="34" y="28" width="20" height="20" rx="3" stroke-width="1.5"/>
+              <path d="M20 20v-8a4 4 0 018 0v8"/>
+              <circle cx="44" cy="20" r="8" fill="rgba(55,138,221,0.2)" stroke-width="1.5"/>
+              <path d="M44 17v3l2 2" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+        <div class="port-card-body">
+          <div class="port-tag">Point-of-Care</div>
+          <div class="port-title">Point-of-Care Technologies</div>
+          <div class="port-desc">Rapid diagnostic platforms, bedside monitoring, and portable testing solutions for primary and district healthcare facilities.</div>
+        </div>
+        <div class="port-card-footer">
+          <span class="port-states">PHC · CHC · DH Level</span>
+          <div class="port-arrow">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="port-card reveal" style="transition-delay:0.4s">
+        <div class="port-card-top pc-deep">
+          <div class="port-icon-large">
+            <svg fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 64 64">
+              <path d="M32 12v8M32 44v8M12 32h8M44 32h8"/>
+              <circle cx="32" cy="32" r="14" stroke-width="1.5"/>
+              <circle cx="32" cy="32" r="6" fill="rgba(138,96,16,0.3)" stroke-width="1.5"/>
+              <path d="M20 20l4 4M40 40l4 4M40 20l-4 4M24 40l-4 4"/>
+            </svg>
+          </div>
+        </div>
+        <div class="port-card-body">
+          <div class="port-tag">Pharmaceuticals</div>
+          <div class="port-title">Pharma Distribution</div>
+          <div class="port-desc">Oncology chemotherapy drugs, specialty medications, and pharmaceutical supply chain solutions for treatment protocols.</div>
+        </div>
+        <div class="port-card-footer">
+          <span class="port-states">NAMCO · Hospital Chains</span>
+          <div class="port-arrow">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="port-card reveal" style="transition-delay:0.5s">
+        <div class="port-card-top pc-slate">
+          <div class="port-icon-large">
+            <svg fill="none" stroke="currentColor" stroke-width="1.2" viewBox="0 0 64 64">
+              <rect x="8" y="16" width="48" height="32" rx="4" stroke-width="1.5"/>
+              <path d="M8 24h48M24 24v24M16 32h4M16 38h4M30 32h18M30 38h12M30 44h18"/>
+            </svg>
+          </div>
+        </div>
+        <div class="port-card-body">
+          <div class="port-tag">Consulting</div>
+          <div class="port-title">Healthcare Consulting</div>
+          <div class="port-desc">Project feasibility, tender support, technical documentation, regulatory compliance, and government scheme navigation services.</div>
+        </div>
+        <div class="port-card-footer">
+          <span class="port-states">Tenders · Proposals · Empanelment</span>
+          <div class="port-arrow">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======== GEOGRAPHY ======== -->
+<section id="geography">
+  <div class="section-inner">
+    <div class="section-label">Geographic Presence</div>
+    <h2 class="section-h2">Serving <em>Three States,</em> Millions of Patients</h2>
+    <p class="section-desc">Our operational footprint spans major government healthcare networks across Western and Central India.</p>
+    <div class="geo-grid">
+      <div class="geo-states reveal">
+        <div class="state-row">
+          <div class="state-indicator si-primary"></div>
+          <div style="flex:1">
+            <div class="state-name">Maharashtra</div>
+            <div class="state-focus">PM-JAY · ESIS · MJPJAY · Oncology Network</div>
+          </div>
+          <div class="state-count">HQ</div>
+        </div>
+        <div class="state-row">
+          <div class="state-indicator si-primary"></div>
+          <div style="flex:1">
+            <div class="state-name">Madhya Pradesh</div>
+            <div class="state-focus">Government Medical Equipment · Diagnostics</div>
+          </div>
+          <div class="state-count">Active</div>
+        </div>
+        <div class="state-row">
+          <div class="state-indicator si-secondary"></div>
+          <div style="flex:1">
+            <div class="state-name">Chhattisgarh</div>
+            <div class="state-focus">CGMSCL · HEV Vaccine · Rehabilitation</div>
+          </div>
+          <div class="state-count">Active</div>
+        </div>
+        <div style="margin-top:1.5rem; padding:1.25rem; border-radius:12px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.07);">
+          <div style="font-size:0.75rem;color:rgba(255,255,255,0.4);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:0.75rem;">Group Companies</div>
+          <div style="display:flex;flex-direction:column;gap:0.5rem;">
+            <div style="font-size:0.85rem;color:rgba(255,255,255,0.6);">↳ Heureka Medihealth</div>
+            <div style="font-size:0.85rem;color:rgba(255,255,255,0.6);">↳ Credknow Solutions</div>
+            <div style="font-size:0.85rem;color:rgba(255,255,255,0.6);">↳ Vimal Enterprises</div>
+          </div>
+        </div>
+      </div>
+      <div class="geo-map reveal" style="transition-delay:0.2s">
+        <!-- Stylized India map outline focus area -->
+        <svg viewBox="0 0 360 420" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:360px;">
+          <defs>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+              <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <!-- Background grid -->
+          <pattern id="mapgrid" width="20" height="20" patternUnits="userSpaceOnUse">
+            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(13,158,122,0.08)" stroke-width="0.5"/>
+          </pattern>
+          <rect width="360" height="420" fill="url(#mapgrid)" rx="16"/>
+
+          <!-- Maharashtra (central-west) -->
+          <path d="M80 180 L100 165 L130 160 L160 155 L190 158 L210 170 L220 190 L215 215 L200 235 L180 245 L160 248 L140 242 L120 232 L100 215 L85 198 Z"
+            fill="rgba(13,158,122,0.18)" stroke="#0d9e7a" stroke-width="1.5"/>
+          <!-- MP (north) -->
+          <path d="M130 100 L160 88 L200 85 L240 92 L260 110 L265 135 L250 155 L220 162 L190 158 L160 155 L130 148 L110 132 L112 112 Z"
+            fill="rgba(201,168,76,0.12)" stroke="rgba(201,168,76,0.5)" stroke-width="1.5"/>
+          <!-- CG (east) -->
+          <path d="M220 162 L250 155 L275 165 L285 188 L280 215 L265 232 L245 238 L225 230 L215 215 L220 190 Z"
+            fill="rgba(13,158,122,0.10)" stroke="rgba(13,158,122,0.4)" stroke-width="1.5"/>
+
+          <!-- City dots -->
+          <!-- Pune -->
+          <circle cx="130" cy="215" r="5" fill="#0d9e7a" filter="url(#glow)"/>
+          <circle cx="130" cy="215" r="10" fill="rgba(13,158,122,0.2)"/>
+          <text x="142" y="218" font-size="10" fill="rgba(255,255,255,0.7)" font-family="DM Sans, sans-serif">Pune</text>
+          <!-- Mumbai -->
+          <circle cx="92" cy="198" r="4" fill="#1dcfaa" filter="url(#glow)"/>
+          <text x="60" y="194" font-size="10" fill="rgba(255,255,255,0.6)" font-family="DM Sans, sans-serif">Mumbai</text>
+          <!-- Nagpur -->
+          <circle cx="207" cy="182" r="4" fill="#c9a84c" filter="url(#glow)"/>
+          <text x="214" y="178" font-size="10" fill="rgba(255,255,255,0.6)" font-family="DM Sans, sans-serif">Nagpur</text>
+          <!-- Bhopal -->
+          <circle cx="185" cy="118" r="4" fill="#c9a84c" filter="url(#glow)"/>
+          <text x="192" y="114" font-size="10" fill="rgba(255,255,255,0.6)" font-family="DM Sans, sans-serif">Bhopal</text>
+          <!-- Raipur -->
+          <circle cx="258" cy="198" r="4" fill="#0d9e7a" filter="url(#glow)"/>
+          <text x="264" y="202" font-size="10" fill="rgba(255,255,255,0.6)" font-family="DM Sans, sans-serif">Raipur</text>
+
+          <!-- Legend -->
+          <rect x="12" y="340" width="12" height="12" rx="2" fill="rgba(13,158,122,0.4)" stroke="#0d9e7a" stroke-width="1"/>
+          <text x="30" y="351" font-size="10" fill="rgba(255,255,255,0.5)" font-family="DM Sans, sans-serif">Maharashtra — Primary</text>
+          <rect x="12" y="360" width="12" height="12" rx="2" fill="rgba(201,168,76,0.25)" stroke="rgba(201,168,76,0.5)" stroke-width="1"/>
+          <text x="30" y="371" font-size="10" fill="rgba(255,255,255,0.5)" font-family="DM Sans, sans-serif">Madhya Pradesh</text>
+          <rect x="12" y="380" width="12" height="12" rx="2" fill="rgba(13,158,122,0.15)" stroke="rgba(13,158,122,0.4)" stroke-width="1"/>
+          <text x="30" y="391" font-size="10" fill="rgba(255,255,255,0.5)" font-family="DM Sans, sans-serif">Chhattisgarh</text>
+
+          <!-- Title -->
+          <text x="180" y="22" font-size="12" fill="rgba(255,255,255,0.3)" font-family="DM Sans, sans-serif" text-anchor="middle" letter-spacing="0.08em">OPERATIONAL FOOTPRINT</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== SCHEMES ======== -->
+<section id="schemes">
+  <div class="section-inner">
+    <div class="section-label">Government Schemes</div>
+    <h2 class="section-h2">Aligned with India's <em>Healthcare Missions</em></h2>
+    <p class="section-desc">Empanelled, compliant, and actively supplying under India's key public health financing and procurement frameworks.</p>
+    <div class="schemes-grid">
+      <div class="scheme-card reveal">
+        <div class="scheme-emoji">🏥</div>
+        <div class="scheme-name">PM-JAY</div>
+        <div class="scheme-full">Pradhan Mantri Jan Arogya Yojana — Cashless treatment empanelment</div>
+      </div>
+      <div class="scheme-card reveal" style="transition-delay:0.08s">
+        <div class="scheme-emoji">⚕️</div>
+        <div class="scheme-name">ESIS</div>
+        <div class="scheme-full">Employees' State Insurance Scheme — Rehabilitation & medical devices</div>
+      </div>
+      <div class="scheme-card reveal" style="transition-delay:0.16s">
+        <div class="scheme-emoji">🧬</div>
+        <div class="scheme-name">MJPJAY</div>
+        <div class="scheme-full">Mahatma Jyotiba Phule Jan Arogya Yojana — Oncology empanelment</div>
+      </div>
+      <div class="scheme-card reveal" style="transition-delay:0.24s">
+        <div class="scheme-emoji">🏛️</div>
+        <div class="scheme-name">CGMSCL</div>
+        <div class="scheme-full">Chhattisgarh Medical Services Corp — State drug & equipment procurement</div>
+      </div>
+      <div class="scheme-card reveal" style="transition-delay:0.32s">
+        <div class="scheme-emoji">🌿</div>
+        <div class="scheme-name">AYUSH / NAM</div>
+        <div class="scheme-full">National AYUSH Mission — Rehabilitation equipment for AYUSH facilities</div>
+      </div>
+      <div class="scheme-card reveal" style="transition-delay:0.40s">
+        <div class="scheme-emoji">💉</div>
+        <div class="scheme-name">NVHCP</div>
+        <div class="scheme-full">National Viral Hepatitis Control Programme — Vaccine &amp; infrastructure</div>
+      </div>
+      <div class="scheme-card reveal" style="transition-delay:0.48s">
+        <div class="scheme-emoji">🎯</div>
+        <div class="scheme-name">NHM</div>
+        <div class="scheme-full">National Health Mission — District hospital equipment supply</div>
+      </div>
+      <div class="scheme-card reveal" style="transition-delay:0.56s">
+        <div class="scheme-emoji">🇮🇳</div>
+        <div class="scheme-name">Atmanirbhar Bharat</div>
+        <div class="scheme-full">Made-in-India medical devices priority under domestic manufacturing push</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== CONTACT ======== -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-label">Get in Touch</div>
+    <h2 class="section-h2">Partner with <em>Krushan Meditech</em></h2>
+    <p class="section-desc">Whether you represent a hospital, government department, or institutional buyer — we'd love to discuss your requirements.</p>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-item-label">Headquarters</div>
+            <div class="contact-item-val">Pune & Mumbai, Maharashtra, India</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-item-label">GSTIN</div>
+            <div class="contact-item-val" style="font-family:monospace;letter-spacing:0.05em;">27AALCK6568K1ZR</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-item-label">Email</div>
+            <div class="contact-item-val">info@krushanmeditech.com</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-item-label">Operations</div>
+            <div class="contact-item-val">Maharashtra · Madhya Pradesh · Chhattisgarh</div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form reveal" style="transition-delay:0.2s">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Full Name</label>
+            <input type="text" class="form-input" placeholder="Dr. / Mr. / Ms.">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Organisation</label>
+            <input type="text" class="form-input" placeholder="Hospital / Department">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Phone</label>
+            <input type="tel" class="form-input" placeholder="+91 XXXXX XXXXX">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-input" placeholder="you@org.in">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Category</label>
+          <select class="form-input">
+            <option value="">Select a product area...</option>
+            <option>Medical Equipment</option>
+            <option>Rehabilitation Devices</option>
+            <option>Oncology Infrastructure</option>
+            <option>Point-of-Care Technologies</option>
+            <option>Pharmaceutical Distribution</option>
+            <option>Healthcare Consulting</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <textarea class="form-input" placeholder="Briefly describe your requirement..."></textarea>
+        </div>
+        <button class="form-submit" onclick="handleSubmit()">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4z"/></svg>
+          Send Enquiry
+        </button>
+        <div class="submit-msg" id="submitMsg">✓ Thank you! We'll be in touch within 24 hours.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== FOOTER ======== -->
+<footer>
+  <div class="footer-copy">© 2025 Krushan Meditech Private Limited. All rights reserved.</div>
+  <div class="footer-gstin">GSTIN: 27AALCK6568K1ZR</div>
+  <div class="footer-links">
+    <a href="#about">About</a>
+    <a href="#portfolio">Solutions</a>
+    <a href="#geography">Presence</a>
+    <a href="#contact">Contact</a>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Nav scroll effect
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('navbar');
+    if (window.scrollY > 60) {
+      nav.style.background = 'rgba(10,22,40,0.98)';
+    } else {
+      nav.style.background = 'rgba(10,22,40,0.92)';
+    }
+  });
+
+  // Mobile menu
+  function toggleMenu() {
+    const links = document.querySelector('.nav-links');
+    if (links.style.display === 'flex') {
+      links.style.display = 'none';
+    } else {
+      links.style.cssText = 'display:flex;flex-direction:column;position:absolute;top:70px;left:0;right:0;background:rgba(10,22,40,0.98);padding:1.5rem 5vw;gap:1rem;border-bottom:1px solid rgba(255,255,255,0.08)';
+    }
+  }
+
+  // Form submit
+  function handleSubmit() {
+    const msg = document.getElementById('submitMsg');
+    msg.style.display = 'block';
+    setTimeout(() => { msg.style.display = 'none'; }, 5000);
+  }
+
+  // Card hover parallax
+  document.querySelector('.hero-card-stack') && document.querySelector('.hero-card-stack').addEventListener('mousemove', e => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = (e.clientX - rect.left - rect.width / 2) / rect.width;
+    const y = (e.clientY - rect.top - rect.height / 2) / rect.height;
+    document.querySelector('.h-card-back').style.transform = `rotate(${5 + x * 4}deg) translate(${x * 8}px, ${y * 8}px)`;
+    document.querySelector('.h-card-mid').style.transform = `rotate(${2 + x * 2}deg) translate(${x * 4}px, ${y * 4}px)`;
+    document.querySelector('.h-card-front').style.transform = `rotate(${x * 1}deg) translate(${x * 2}px, ${y * 2}px)`;
+  });
+</script>
+</body>
+</html>
